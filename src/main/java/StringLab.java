@@ -60,16 +60,17 @@ public class StringLab
     // A number joined to a String is converted to a String for you. You never
     // write that conversion yourself; this is called implicit conversion.
     //
-    // Example: pairLine("x"   , 1, 2)  is "x: 12"
-    // Example: pairLine("sum" , 10, 20) is "sum: 1020"
-    // Example: pairLine("qty" , 0, 0)  is "qty: 00"
+    // Example: pairLine("x"  , 1, 2)   is "x: 12"
+    // Example: pairLine("sum", 10, 20) is "sum: 1020"
+    // Example: pairLine("qty", 0, 0)   is "qty: 00"
     //
     // Careful: write the colon and the single space exactly once, between the
     // label and the first number. Do not add parentheses around a + b here.
     // ---------------------------------------------------------------
     public static String pairLine(String label, int a, int b)
     {
-        // TODO Part 2a: return label, then ": ", then a and b joined on
+        // TODO Part 2a: return label, then ": ", then a and b joined one
+        // after the other
         return label;
     }
 
@@ -103,8 +104,8 @@ public class StringLab
     // ---------------------------------------------------------------
     // PART 3: substring(from, to) stops BEFORE to
     //
-    // Return the piece of text that begins at index from and ends at index
-    // to - 1. That is exactly what substring(from, to) gives you.
+    // Return the piece of text that begins at index from and stops just
+    // before index to. That is exactly what substring(from, to) gives you.
     //
     // Characters in a String are numbered from 0, so the last character sits
     // at index length() - 1. Write the index line under the string before you
@@ -163,16 +164,17 @@ public class StringLab
     // Return the index where target first appears inside text, or -1 if
     // target does not appear in text at all.
     //
-    // indexOf(str) gives back an int: the index at which the FIRST occurrence
-    // begins. It does not give back the matched text, and it is not true or
-    // false. If the search fails it returns -1, which can never be a real
-    // index, so there is no way to confuse a miss with a hit.
+    // text.indexOf(target) gives back an int: the index at which the FIRST
+    // occurrence begins. It does not give back the matched text, and it is
+    // not true or false. If the search fails it returns -1, which can never
+    // be a real index, so there is no way to confuse a miss with a hit.
     //
-    // Example: positionOf("abcabc"     , "bc")   is 1, only the first
+    // Example: positionOf("abcabc"      , "bc")   is 1, only the first
     //          occurrence is ever reported
-    // Example: positionOf("hello"      , "h")    is 0, found at the very front
+    // Example: positionOf("hello"       , "h")    is 0, found at the very
+    //          front
     // Example: positionOf("Ada Lovelace", "Love") is 4
-    // Example: positionOf("abcabc"     , "z")    is -1
+    // Example: positionOf("abcabc"      , "z")    is -1
     //
     // Careful: 0 and -1 mean opposite things. 0 means "found, right at the
     // start"; -1 means "not found anywhere". A miss is never 0.
@@ -231,16 +233,19 @@ public class StringLab
     // Do not write a == b. On two String variables, == asks a completely
     // different question: are these two variables pointing at the same one
     // object? Two separate String objects holding identical characters make
-    // == false, and this lab's tests hand you exactly that. The rule for the
-    // whole course is absolute: compare String content with equals, never
-    // with ==.
+    // == false, so == can answer "different" about two Strings you can see
+    // are the same. The rule for the whole course is absolute: compare
+    // String content with equals, never with ==.
     //
     // Example: sameText("cat"  , "cat")   is true
     // Example: sameText("cat"  , "dog")   is false
     // Example: sameText("hello", "Hello") is false, equals is case sensitive
     // Example: sameText("abc"  , "abcd")  is false
     //
-    // Careful: if every one of your answers comes out false, you wrote == .
+    // Careful: main will not catch this mistake for you. Both "cat" literals
+    // in sameText("cat", "cat") are the same object, so even a == b prints
+    // true there. Looking right on literals is exactly why == cannot be
+    // trusted on Strings.
     // ---------------------------------------------------------------
     public static boolean sameText(String a, String b)
     {

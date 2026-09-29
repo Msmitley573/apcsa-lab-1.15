@@ -1,18 +1,19 @@
 # Lab 1.15 — String Manipulation
 
-Seven short methods in `StringLab.java`, most of them one line. The
-instructions for each one are in the comment block directly above the method,
-so read them there — this page is just the map.
+Seven parts and eight short methods in `StringLab.java`, most of them one
+line. The instructions for each one are in the comment block directly above
+the method, so read them there — this page is just the map.
 
 Plan on 30 to 45 minutes.
 
 ## What you will practice
 
-- Counting characters with `length()`, and numbering them from 0.
+- Counting characters with `length()`.
 - Joining values with `+`, strictly left to right, and watching a number turn
   into text on its own.
-- Cutting a String with both forms of `substring`, where the second argument is
-  where you stop rather than the last character you keep.
+- Cutting a String with both forms of `substring`, where characters are
+  numbered from 0 and the second argument is where you stop rather than the
+  last character you keep.
 - Searching with `indexOf`, including the `-1` it returns when the search
   fails.
 - Comparing two Strings with `equals` and `compareTo` instead of `==`.
@@ -49,19 +50,21 @@ Your teacher will run a separate set of tests on your work when you turn it in.
 
 ## Before you turn it in
 
-- [ ] Every `TODO` comment has been replaced with real code.
+- [ ] Every placeholder line under a `TODO` has been replaced with real code.
 - [ ] `mvn -q compile exec:java` runs without errors.
 - [ ] Parts 2a and 2b give different answers for the same three values. If they
       agree, check which one has the parentheses.
-- [ ] Parts 3 and 4 return the value `substring` gave back. Calling `substring`
-      and ignoring the result changes nothing, because a String can never be
-      edited.
+- [ ] Parts 3 and 4 return the value that `substring` gave back, not `text`.
+      Calling `substring` and ignoring the result changes nothing, because a
+      String can never be edited.
 - [ ] Part 5 returns `-1` for a word that is not there, not `0`.
-- [ ] Part 7 uses `equals`. If every answer comes out `false`, you wrote `==`.
+- [ ] Part 7 uses `equals`. Writing `==` can still print `true` for the
+      literals in `main`, so check the code rather than trusting that output.
 - [ ] You did not rename any method, change any parameter list, or change any
       return type. The grader compiles against those exact signatures, so a
       rename means a zero even if your logic is perfect.
-- [ ] You may change `main` however you like. It is not graded.
+
+`main` is not graded, so you may change it however you like.
 
 ## Optional extension, not graded
 
@@ -73,8 +76,9 @@ System.out.println(s.substring(0, 5));
 System.out.println(s.substring(0, 6));
 ```
 
-The first line is legal and the second is not. Write one sentence saying what
-the largest legal second argument is, and why that number is `length()` and not
+The first line prints `hello`. The second one compiles, then crashes with
+`StringIndexOutOfBoundsException`. Write one sentence saying what the largest
+legal second argument is, and why that number is `length()` and not
 `length() - 1`.
 
 Then try this, and explain the two different answers in one more sentence:
