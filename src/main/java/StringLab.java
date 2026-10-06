@@ -39,7 +39,7 @@ public class StringLab {
     public static int characterCount(String text)
     {
         // TODO Part 1: return the number of characters in text
-        return 0;
+        return text.length();
     }
 
     // ---------------------------------------------------------------
@@ -69,7 +69,7 @@ public class StringLab {
     public static String pairLine(String label, int a, int b) {
         // TODO Part 2a: return label, then ": ", then a and b joined one
         // after the other
-        return label + a + b;
+        return label + ": " + a + b;
     }
 
     // ---------------------------------------------------------------
@@ -95,7 +95,7 @@ public class StringLab {
     // ---------------------------------------------------------------
     public static String sumLine(String label, int a, int b) {
         // TODO Part 2b: return label, then ": ", then the sum of a and b
-        return label +(a + b);
+        return label + ": " + (a + b);
     }
 
     // ---------------------------------------------------------------
@@ -127,7 +127,7 @@ public class StringLab {
     public static String section(String text, int from, int to) {
         // TODO Part 3: return the characters of text from index from up to
         // but not including index to
-        return text;
+        return text.substring(from, to);
     }
 
     // ---------------------------------------------------------------
@@ -150,7 +150,7 @@ public class StringLab {
     // ---------------------------------------------------------------
     public static String ending(String text, int from) {
         // TODO Part 4: return the characters of text from index from onward
-        return text;
+        return text.substring(from);
     }
 
     // ---------------------------------------------------------------
@@ -207,7 +207,7 @@ public class StringLab {
     // ---------------------------------------------------------------
     public static int alphabeticalOrder(String a, String b) {
         // TODO Part 6: return the comparison of a with b
-        return alphabeticalOrder("a", "b");
+        return a.compareTo(b);
     }
 
     // ---------------------------------------------------------------
@@ -242,7 +242,7 @@ public class StringLab {
     // ---------------------------------------------------------------
     public static boolean sameText(String a, String b) {
         // TODO Part 7: return whether a and b hold the same characters
-        return false;
+        return a.equals(b);
     }
 
     // ---------------------------------------------------------------
